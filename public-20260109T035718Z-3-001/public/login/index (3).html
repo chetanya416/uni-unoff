@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Uniunoff - Login</title>
+  <link rel="stylesheet" href="/login/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+    }
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+    .left {
+      flex: 1;
+      background: url('/login/Library_31199.jpg') no-repeat center center;
+      margin: 5px;
+      margin-top: 115px;
+      height: 60%;
+    }
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f4;
+    }
+    .wrapper {
+      width: 80%;
+      max-width: 400px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .logo h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #007bff;
+    }
+    .title {
+      margin-bottom: 15px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .login button {
+      width: 100%;
+      background: #007bff;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .login button:hover {
+      background: #0056b3;
+    }
+    .forgot, .admin-login {
+      color: #007bff;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 15px;
+      margin-right: 15px;
+    }
+    .forgot:hover, .admin-login:hover {
+      text-decoration: underline;
+    }
+    .signup-wrapper {
+      margin-top: 15px;
+    }
+    .signup-wrapper a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .signup-wrapper a:hover {
+      text-decoration: underline;
+    }
+    .link-wrapper {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.link-line {
+  margin: 10px 0; /* Equal spacing above and below */
+  font-size: 14px;
+}
+
+.link-line a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.link-line a:hover {
+  text-decoration: underline;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left"></div>
+    <div class="right">
+      <div class="wrapper">
+        <div class="logo text-center">
+          <h1>uniunoff</h1>
+        </div>
+        <div class="inner-warpper text-center">
+          <h2 class="title">Login to your account</h2>
+          <form id="formvalidate" method="POST">
+            <div class="input-group">
+              <label for="userName">User Name</label>
+              <input name="userName" id="userName" type="text" required />
+            </div>
+            <div class="input-group">
+              <label for="userPassword">Password</label>
+              <input name="userPassword" id="userPassword" type="password" required />
+            </div>
+            <div class="login">
+              <button type="submit" id="loginBtn">LOGIN</button>
+            </div>
+            <div class="link-wrapper">
+              <div class="link-line"><a href="/admin portal/index (1).html" id="adminLoginLink">Admin Login</a></div>
+              <div class="link-line"><a href="#">Forgot Password?</a></div>
+              <div class="link-line"><a href="#">Don't have an account? <span class="text-primary">Create One</span></a></div>
+            </div>            
+            </div>            
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Handle form submission for login
+    document.getElementById("formvalidate").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const username = document.getElementById("userName").value;
+      const password = document.getElementById("userPassword").value;
+
+      try {
+        const response = await fetch("http://localhost:3000/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password }),
+        });
+
+        if (response.ok) {
+          alert("Login successful!");
+          window.location.href = "/student portal/index.html";
+        } else {
+          alert("Login failed. Please try again.");
+        }
+      } catch (error) {
+        console.error("Error during login:", error);
+        alert("An error occurred. Please try again later.");
+      }
+    });
+
+  </script>
+</body>
+</html>

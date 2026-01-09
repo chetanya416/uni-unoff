@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main container holding image + login */
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  max-width: 1000px;
+  height: 80vh;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Image section */
+.left {
+  flex: 1;
+  background: url('Library_31199.jpg') no-repeat center center;
+  margin-top: 100px;
+  height: 60%;
+}
+
+/* Login form section */
+.wrapper {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wrapper h1 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #007bff;
+}
+
+/* Input field styles */
+.input-group {
+  margin-bottom: 25px;
+  text-align: left;
+  position: relative;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #666;
+  position: absolute;
+  top: 14px;
+  left: 15px;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 16px 12px 6px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 15px;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #007bff;
+  background-color: #fff;
+}
+
+/* Login button */
+.login a {
+  display: inline-block;
+  background: #007bff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+  margin-top: 10px;
+}
+
+.login a:hover {
+  background: #0056b3;
+}
+
+/* Extra links */
+.forgot {
+  margin-top: 30px;
+  display: block;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-wrapper a {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.forgot:hover,
+.signup-wrapper a:hover {
+  color: #0056b3;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left {
+    height: 200px;
+  }
+
+  .wrapper {
+    padding: 30px 20px;
+  }
+}

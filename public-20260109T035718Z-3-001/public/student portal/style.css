@@ -1,0 +1,264 @@
+
+/********** Common CSS Starts **********/  
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+    margin:0px;
+    padding:0px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    font-family: "Poppins", sans-serif;
+    margin:0;
+    padding:0;
+    outline:0 
+}
+html {
+    -webkit-text-size-adjust:100%;
+    -ms-text-size-adjust:100%;
+    font-size:10px;
+    -webkit-tap-highlight-color:transparent 
+}
+html, body {
+    font-family: Roboto, sans-serif, arial;
+    font-size: 14px;
+    color: #242424;
+    font-weight: 400;
+    background: #ffffff;
+}
+.container {
+    width: 100%;
+    margin:0px auto;
+    display:table;
+}
+.width-100 {
+    width: 100%;
+    float: left;
+}
+.width-25 {
+    width: 25%;
+    float: left;
+}
+.width-33 {
+    width: 33%;
+    float: left;
+}
+.width-50 {
+    float: left;
+    width: 50%;
+}
+.width-66 {
+    width: 66%;
+    float: left;
+}
+.width-75 {
+    width:75%;
+    float: left;
+}
+.mt-20 {
+    margin-top:20px;
+}
+.mt-30 {
+    margin-top:30px;
+}
+.mt-50 {
+    margin-top:50px;
+}
+.main-section{
+    width: 100%;
+    float: left;
+    padding-top:70px;
+    padding-bottom:70px;
+}
+/********** Common CSS end **********/  
+/********** Logo And Main Menu CSS Starts **********/  
+.logo {
+    padding-top:5px;
+    padding-bottom:5px;
+    width: 90px;
+}
+.logo img {
+    height:57px;
+}
+.head-menu {
+    padding-top: 25px;
+    padding-bottom: 12px;
+    background-color: #7cd0ec;
+    width: 1260px;
+}
+.head-menu ul {
+    list-style: none;
+    float: right;
+    font-size: 12px;
+}
+.head-menu h1{
+  float: left;
+  margin-left: 30px;
+  font-size: 25px; 
+  font-weight: 600; 
+}
+.head-menu ul li {
+    float: left;
+    padding-left:20px;
+}
+.head-menu ul li a {
+    color: #4a4a4a;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+/********** Logo And Main Menu CSS Ends **********/
+/********** Notice Board, Recent Event CSS Starts **********/  
+.note-event {
+    padding: 10px;
+    border: 1px solid #e3e3e3;
+    width: 48%;
+    margin: 1%;
+    float: left;
+}
+.notice-board {
+    border: 3px solid #00aeff;
+    padding: 0px;
+    color: white;
+    background: #7cd0ec;
+    width: 100%;
+    float: left;
+    max-width: 100%;
+}
+.notice-board ul {
+    list-style: none;
+    padding: 0px;
+    width: 100%;
+    float: left;
+}
+.notice-board ul li {
+    font-size: 14px;
+    margin-bottom: 20px;
+    width: 100%;
+    float: left;
+}
+.event-list {
+    padding: 10px;
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #e1e1e1;
+}
+.event-date {
+    width: 80px;
+    float: left;
+    text-align: center;
+    background: #7cd0ec;
+    color: #fff;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+.event-date p {
+    font-weight: 400;
+}
+.event-date h4 {
+    font-weight: 400;
+    font-size:28px;
+}
+.event-content {
+    width: calc(100% - 110px);
+    float: left;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+.scroll-container {
+    height: 300px; /* Adjust the height as needed */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .scroll-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    animation: scroll 10s linear infinite;
+  }
+  
+  .scroll-container:hover ul {
+    animation-play-state: paused;
+  }
+  
+  @keyframes scroll {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: -100%; /* Ensures smooth scrolling out of view */
+    }
+  }
+/* Styling for Recent Events */
+.scroll-container.recent-events {
+    display: flex;
+    flex-direction: column; /* Stacks events vertically */
+    gap: 10px; /* Adds space between events */
+    padding: 10px;
+  }
+  
+  .scroll-container.recent-events li {
+    display: flex;
+    align-items: center;
+    background-color: #f1f9ff; /* Light blue background for each event */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds slight shadow */
+  }
+  
+  .event-date {
+    flex: 0 0 60px; /* Fixed width for date block */
+    text-align: center;
+    background-color: #007bff; /* Primary color for date background */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .event-content {
+    margin-left: 10px; /* Space between date and event content */
+  }
+  
+  .event-content p {
+    margin: 0; /* Removes default margin */
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .event-content h3 {
+    margin: 5px 0 0 0; /* Adds spacing above event title */
+    font-size: 16px;
+    color: #222;
+  }
+    
+/********** Notice Board, Recent Event CSS Ends **********/
+/* Add a background to the Newsletter section */
+.note-event.newsletter {
+    background-size: cover;
+    padding: 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    color: white; /* Ensure text is visible */
+    max-width: 800px; /* Set a maximum width for the newsletter box */
+    margin: 0 auto;
+  }
+  
+  /* Add a background to the Recent Events section */
+  .note-event.recent-events {
+    background-size: cover;
+    padding: 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    color: white; /* Ensure text is visible */
+  }
+  body {
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+    background-position: center; /* Centers the image */
+    margin: 0; /* Removes default margin for consistent alignment */
+    padding: 0; /* Removes default padding */
+  }
+  
+  
+
